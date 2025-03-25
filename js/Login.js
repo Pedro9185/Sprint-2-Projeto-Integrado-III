@@ -20,12 +20,12 @@ formulario.addEventListener("submit", (ev) => {
     }, 2000);
   } else {
     armazenar_dados("usuarioLogado", encontrarUsuario);
-    window.location = `./Home.html`;
+    window.location = `./home.html`;
   }
 });
 
 function ir_para_pag_cadastrar() {
-  window.location = "./SignUp.html";
+  window.location = "./signUp.html";
 }
 
 function armazenar_dados(chave, valor) {
