@@ -1,23 +1,17 @@
 
-/* Local atual na página */
-#title-navegation{
-    border: solid 1px red;
+#title-navegation {
+  border: solid 1px red;/* remova depois */
 }
-#title-navegation a{
-    text-decoration: none;
-    font-weight: bolder;
-    color: rgb(69, 69, 69);
+#title-navegation a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: rgb(69, 69, 69);
 }
-#title-navegation a:hover{
-    color: black;
+#title-navegation a:hover {
+  color: black;
 }
-/* Conteudo principal */
 #mainContent {
-    border: solid 1px blue;/* remova depois */
-    display: flex;
-    align-items: center;/* adapte conforme necessário */
-    justify-content: center;/* adapte conforme necessário */
-    flex-wrap: wrap;
-    margin-top: 50px;
-    box-sizing: border-box;
-  }
+  border: solid 1px blue; /* remova depois */
+  margin-top: 50px;
+  box-sizing: border-box;
+}
