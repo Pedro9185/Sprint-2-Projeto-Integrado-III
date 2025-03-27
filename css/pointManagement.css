@@ -102,6 +102,7 @@ body {
 .th-image {
   padding: 0px;
 }
+
 /* OBS: Falta deixar responsivo para as seguintes telas 425px 375px e 320px */
 @media (max-width: 1024px) {
   #pesquisa {
