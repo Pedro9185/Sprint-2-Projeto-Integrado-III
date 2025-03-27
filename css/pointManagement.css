@@ -1,5 +1,9 @@
-#title-navegation {
+body {
+  overflow: hidden;
 }
+
+/* #title-navegation {
+} */
 #title-navegation a {
   text-decoration: none;
   font-weight: bolder;
@@ -9,13 +13,47 @@
   color: black;
 }
 #mainContent {
-  margin-top: 50px;
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+#titulo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pesquisa {
+  width: 573px;
+  height: 44px;
+  background-color: rgba(224, 225, 221, 1);
+  padding-left: 30px;
+  border: 1px solid;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
+#filtos {
+  width: 110px;
+  height: 44px;
+  background-color: rgba(224, 225, 221, 1);
+  padding-left: 10px;
+  border-radius: 5px;
+  margin-left: 200px;
+}
+
+.icon-placeholder {
+  padding-left: 30px; /* Espaço para o ícone */
+  background-image: url("../assets/img/Vector.svg");
+  background-repeat: no-repeat;
+  background-position: 8px center; /* Posição do ícone */
+  background-size: 16px; /* Tamanho do ícone */
+}
 .link_table {
   text-decoration: none;
-  color: rgba(0, 0, 0, 1);
+  color: rgb(26, 26, 26);
 }
 
 .imagem-funcionario {
@@ -25,10 +63,36 @@
   border-radius: 50px;
 }
 
-.color_table {
-  background-color: rgba(224, 225, 221, 1);
+.div_table_point_management {
+  display: flex;
+  width: 100%;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
 }
 
-.margin_table_row {
-  margin-left: 0px !important;
+.table_point_management {
+  width: 100%;
+  height: 70%;
+  border-collapse: collapse;
+  border-bottom: 1px solid black;
+  font-size: 16px;
+  color: rgb(26, 26, 26);
+  font-weight: bolder;
+}
+
+.table_row {
+  border-collapse: collapse;
+  border-bottom: 1px solid black;
+}
+
+.div_pesquisa {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.color_title {
+  color: #555;
 }
