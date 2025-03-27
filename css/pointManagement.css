@@ -35,7 +35,7 @@ body {
   box-sizing: border-box;
 }
 
-#filtos {
+#filtros {
   width: 110px;
   height: 44px;
   background-color: rgba(224, 225, 221, 1);
@@ -76,8 +76,9 @@ body {
   display: flex;
   width: 100%;
   height: 70%;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  margin-top: 40px;
 }
 
 .table_point_management {
@@ -104,4 +105,91 @@ body {
 
 .color_title {
   color: #555;
+}
+.th-image {
+  padding: 0px;
+}
+/* OBS: Falta deixar responsivo para as seguintes telas 425px 375px e 320px */
+@media (max-width: 425px) {
+  #pesquisa {
+    width: 70%;
+    padding-left: 30px;
+  }
+
+  #filtros {
+    width: 25%;
+    margin-left: 10px;
+    padding-left: 30px;
+  }
+
+  .div_pesquisa {
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .table_point_management {
+    font-size: 14px;
+  }
+
+  .imagem-funcionario {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  #pesquisa {
+    width: 65%;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  #filtros {
+    width: 30%;
+    margin-left: 5px;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .table_point_management {
+    font-size: 12px;
+  }
+
+  .div_table_point_management {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  #pesquisa {
+    width: 60%;
+    padding-left: 30px;
+    font-size: 12px;
+  }
+
+  #filtros {
+    width: 35%;
+    margin-left: 5px;
+    padding-left: 30px;
+    font-size: 12px;
+  }
+
+  .table_point_management {
+    font-size: 11px;
+  }
+
+  .imagem-funcionario {
+    width: 25px;
+    height: 25px;
+  }
+
+  .div_pesquisa {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #pesquisa,
+  #filtros {
+    margin-bottom: 10px;
+  }
 }
