@@ -1,24 +1,70 @@
 
-/* Local atual na página */
-#title-navegation{
-    border: solid 1px red;
+#title-navegation {
+  border: solid 1px red;/* remova depois */
 }
-#title-navegation a{
-    text-decoration: none;
-    font-weight: bolder;
-    color: rgb(69, 69, 69);
+#title-navegation a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: rgb(69, 69, 69);
 }
-#title-navegation a:hover{
-    color: black;
+#title-navegation a:hover {
+  color: black;
 }
-/* Conteudo principal */
 #mainContent {
-    border: solid 1px blue;/* remova depois */
-    display: flex;
-    align-items: center;/* adapte conforme necessário */
-    justify-content: center;/* adapte conforme necessário */
-    flex-wrap: wrap;
-    margin-top: 50px;
-    box-sizing: border-box;
-  }
+  border: solid 1px blue; /* remova depois */
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+.filter-space{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+  border: solid 1px red;
+  gap: 10px; /* Espaçamento entre os elementos */
+  width: 100%;
+  align-items: center;
+}
+.filter-actions {
+  border: solid 1px black;
+  display: flex;
+  gap: 10px; /* Espaçamento entre o link e o botão */
+}
+.filter-space input{
+  flex-grow: 1;
+  border: solid 1px grey;
+  border-radius: 5px;
+  padding: 5px;
+}
+.filter-space a{
+  text-decoration: none;
+  background-color: rgba(61, 84, 112, 1);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.filter-space button{
+  border: solid 1px grey;
+  border-radius: 5px;
+  padding: 5px;
   
+}
+.table-space{
+  border: solid 1px red;
+  padding: 20px;
+}
+/* .custom-table td, th{
+  background-color: rgba(224, 225, 221, 1)!important;
+  border: solid 3px black;
+}
+.custom-table thead:hover {
+  background-color: rgba(62, 79, 13, 0.8) !important;
+} */
+.table td{
+  background-color: rgba(224, 225, 221, 1);
+  
+}
+.table th{
+background-color: rgba(61, 84, 112, 1);
+color: white;
+}
