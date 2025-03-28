@@ -240,7 +240,6 @@ nav {
   color: #555;
   font-weight: 500;
   transition: 0.5s;
-  
 }
 
 #userMenu ul li:hover a {
@@ -422,15 +421,15 @@ footer p {
   body {
     grid-template-columns: 200px 1fr;
   }
-  
+
   aside {
     width: 200px;
   }
-  
+
   .navegation {
     font-size: 16px;
   }
-  
+
   .main {
     padding: 20px;
   }
@@ -445,13 +444,13 @@ footer p {
       "main main"
       "footer footer";
   }
-  
+
   main {
     margin-left: 0;
     width: 100%;
     padding-left: 5px;
   }
-  
+
   aside {
     position: fixed;
     height: calc(100vh - 55px);
@@ -460,24 +459,24 @@ footer p {
     display: none;
     z-index: 100;
   }
-  
+
   #sidebar {
     z-index: 1000;
     background-color: transparent;
   }
-  
+
   #showlateral {
     display: block;
   }
-  
+
   .show {
     display: flex;
   }
-  
+
   #search[type="text"] {
     width: 50px;
   }
-  
+
   #search[type="text"]:focus {
     width: 100%;
     position: absolute;
@@ -485,12 +484,12 @@ footer p {
     left: 0px;
     right: 0px;
   }
-  
+
   #userMenu {
     right: 5px;
     width: 180px;
   }
-  
+
   #dashboard div {
     width: 180px;
     height: 180px;
@@ -502,47 +501,59 @@ footer p {
   body {
     font-size: 16px;
   }
-  
-  h1 { font-size: 28px; }
-  h2 { font-size: 22px; }
-  h3 { font-size: 18px; }
-  p { font-size: 16px; }
-  
+
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+  }
+
   .main {
     padding: 15px;
     margin-right: 5px;
   }
-  
+
   #dashboard {
     gap: 10px;
     margin-top: 30px;
   }
-  
+
   #dashboard div {
     width: 150px;
     height: 150px;
     padding: 15px;
   }
-  #dashboard h3{
+  #dashboard h3 {
     font-size: 14px;
   }
   #conteinerRight {
     gap: 5px;
   }
-  
-  #modesContainer, #notifContainer, #userContainer {
+
+  #modesContainer,
+  #notifContainer,
+  #userContainer {
     width: 35px;
     height: 35px;
   }
-  
-  #modesContainer img, #notifContainer img, #userContainer img {
+
+  #modesContainer img,
+  #notifContainer img,
+  #userContainer img {
     width: 25px;
   }
-  
+
   #logo {
     height: 40px;
   }
-  
+
   footer div {
     margin-right: 5px;
   }
@@ -553,18 +564,17 @@ footer p {
   .main {
     padding: 10px;
   }
-  
+
   #dashboard div {
     width: 130px;
     height: 130px;
     padding: 10px;
   }
-  
-  
+
   #hide {
     width: 40px;
   }
-  
+
   #showlateral {
     height: 30px;
     margin-right: 10px;

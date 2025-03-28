@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/pointManagement.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
 
     <title>Gestão de Ponto</title>
@@ -87,7 +85,7 @@
                         Benefícios
                     </div>
                 </a>
-                <a href="#" class="navegation">
+                <a href="./payroll.html" class="navegation">
                     <div id="navegationPayment">
                         <img src="./img/pay_black.png" alt="payment" />Folha de pagamento
                     </div>
@@ -118,49 +116,68 @@
 
             </section>
             <section id="mainContent">
-                <div><input type="search"></div>
-                <table class="table  table-secondary">
+                <article id="titulo">
+                    <h3 class="color_title">HISTÓRICO DE FALTAS</h3>
+                </article>
+                <div class="div_pesquisa">
 
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" class=""><img src="./assets/img/arthur dias.jpg" alt="imagem-funcionario"
-                                    class="imagem-funcionario"></th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-
-                            <td> <a href="#" class="link_table">Ver Informações</a></td>
+                    <input type="search" name="pesquisar" id="pesquisa" placeholder="Pesquisar..."
+                        class="icon-placeholder-pesquisa">
 
 
-                        </tr>
-                        <tr>
-                            <th scope="row"><img src="./assets/img/arthur dias.jpg" alt="imagem-funcionario"
-                                    class="imagem-funcionario"></th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td> <a href="#" class="link_table">Ver Informações</a></td>
+                    <select name="" id="filtros" class="icone-placeholder-filtros">
+                        <option value="data">Data</option>
+                        <option value="hora">Hora de Saida</option>
+                        <option value="hora">Hora de Entrada</option>
+                        <option value="status">Status</option>
+                    </select>
+                </div>
+
+                <div class="div_table_point_management">
+                    <table class="table_point_management">
+
+                        </thead>
+                        <tbody>
+                            <tr class="table_row">
+                                <th scope="row" class=""><img src="./img/artur dias.png" alt="imagem-funcionario"
+                                        class="imagem-funcionario"></th>
+                                <td colspan="3">Arthur Dias</td>
 
 
-                        </tr>
-                        <tr>
-                            <th scope="row"><img src="./assets/img/arthur dias.jpg" alt="imagem-funcionario"
-                                    class="imagem-funcionario"></th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td> <a href="#" class="link_table">Ver Informações</a></td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row"><img src="./assets/img/arthur dias.jpg" alt="imagem-funcionario"
-                                    class="imagem-funcionario"></th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td> <a href="#" class="link_table">Ver Informações</a></td>
+                                <td> <a href="./viewInfo.html" class="link_table">Ver informações</a></td>
 
 
-                        </tr>
-                    </tbody>
-                </table>
+                            </tr>
+                            <tr class="table_row">
+                                <th scope="row" class="th-image"><img src="./img/amelia santos.png"
+                                        alt="imagem-funcionario" class="imagem-funcionario"></th>
+                                <td colspan="3">Amélia Santos</td>
+                                <td> <a href="./viewInfo.html" class="link_table">Ver informações</a></td>
 
+
+                            </tr>
+                            <tr class="table_row">
+                                <th scope="row" class="th-image"><img src="./img/Amanda dantas.png"
+                                        alt="imagem-funcionario" class="imagem-funcionario"></th>
+                                <td colspan="3">Amanda Dantas </td>
+                                <td> <a href="./viewInfo.html" class="link_table">Ver informações</a></td>
+
+                            </tr>
+                            <tr class="table_row">
+                                <th scope="row" class="th-image"><img src="./img/benicio rocha.png"
+                                        alt="imagem-funcionario" class="imagem-funcionario"></th>
+                                <td colspan="3">Benício Rocha</td>
+                                <td> <a href="./viewInfo.html" class="link_table">Ver informações</a></td>
+                            </tr>
+                            <tr class="table_row">
+                                <th scope="row" class="th-image"><img src="./img/cauã tavares.png"
+                                        alt="imagem-funcionario" class="imagem-funcionario"></th>
+                                <td colspan="3">Cauã Tavares</td>
+                                <td> <a href="./viewInfo.html" class="link_table">Ver informações</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </section>
         </div>
@@ -172,9 +189,6 @@
     </footer>
 
     <script type="text/javascript" src="./js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -59,6 +59,9 @@ formulario.addEventListener("submit", (ev) => {
   formulario.reset();
 
   appendAlert("Usuario cadastrado com sucesso!", "success");
+  setTimeout(() => {
+    window.location = `./login.html`;
+  }, 1050);
 });
 
 function armazenar_dados(chave, valor) {
