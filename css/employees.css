@@ -1,57 +1,75 @@
-
 #title-navegation {
-  border: solid 1px red;/* remova depois */
+  /*  border: solid 1px red; remova depois */
 }
 #title-navegation a {
   text-decoration: none;
-  font-weight: bolder;
   color: rgb(69, 69, 69);
 }
 #title-navegation a:hover {
   color: black;
 }
 #mainContent {
-  border: solid 1px blue; /* remova depois */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: solid 1px grey;
+  border-radius: 10px; /* remova depois */
   margin-top: 50px;
   box-sizing: border-box;
 }
-.filter-space{
+.filter-space {
   display: flex;
   justify-content: space-between;
   padding: 5px;
   box-sizing: border-box;
-  border: solid 1px red;
+  /* border: solid 1px red; */
   gap: 10px; /* Espaçamento entre os elementos */
   width: 100%;
   align-items: center;
 }
 .filter-actions {
-  border: solid 1px black;
+  /* border: solid 1px black; */
   display: flex;
   gap: 10px; /* Espaçamento entre o link e o botão */
 }
-.filter-space input{
+.filter-space input {
   flex-grow: 1;
   border: solid 1px grey;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
+  font-size: 18px;
 }
-.filter-space a{
+.filter-space a {
   text-decoration: none;
   background-color: rgba(61, 84, 112, 1);
   color: white;
   padding: 5px;
   border-radius: 5px;
 }
-.filter-space button{
-  border: solid 1px grey;
+.filter-space button {
+  /* border: solid 1px grey; */
   border-radius: 5px;
   padding: 5px;
-  
+  font-size: 18px;
 }
-.table-space{
-  border: solid 1px red;
+#showFilters-space{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+  border: solid 1px red; 
+  gap: 10px; /* Espaçamento entre os elementos */
+  width: 100%;
+  align-items: center;
+  display: none;
+}
+#showFilters-space.show{
+  display: flex;
+}
+.table-space {
+  /* border: solid 1px red; */
   padding: 20px;
+  margin-bottom: 10px;
 }
 /* .custom-table td, th{
   background-color: rgba(224, 225, 221, 1)!important;
@@ -60,11 +78,73 @@
 .custom-table thead:hover {
   background-color: rgba(62, 79, 13, 0.8) !important;
 } */
-.table td{
-  background-color: rgba(224, 225, 221, 1);
-  
+.table {
+  border-collapse: collapse;
+  width: 100%;
 }
-.table th{
-background-color: rgba(61, 84, 112, 1);
-color: white;
+.table thead tr {
+}
+.table tbody tr {
+  border-bottom: solid 1px grey;
+}
+.table td,
+th {
+  background-color: rgba(224, 225, 221, 1);
+  padding: 5px;
+  align-items: center;
+  text-align: center;
+}
+.table th {
+}
+.actions img {
+  width: 30px;
+}
+/* flex box: empurrar a div results para baixo:flex: 1 */
+.flex-space {
+  flex: 1;
+  /* border: solid 1px; */
+}
+/* results space */
+#resultsSpace {
+  /* border: solid 1px yellow; */
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: auto;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.results {
+  /* border: solid 1px red; */
+  display: flex;
+  align-items: center;
+}
+.amount div {
+  border: solid 1px grey;
+  display: flex;
+  padding: 0px 5px 0px 5px;
+  gap: 3px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+.results img {
+  width: 30px;
+  min-height: 30px;
+}
+.next {
+  gap: 5px;
+}
+.next a {
+  padding: 0px 10px 0px 10px;
+}
+.numbers {
+  border: solid 1px grey;
+  border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
+}
+.numbers:hover {
+  background-color: grey;
 }

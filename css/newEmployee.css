@@ -1,0 +1,120 @@
+#title-navegation {
+  /* border: solid 1px red; */
+}
+#title-navegation a {
+  text-decoration: none;
+  color: rgb(69, 69, 69);
+}
+#title-navegation a:hover {
+  color: black;
+}
+#mainContent {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px; /* remova depois */
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+/* inicio tabs */
+.tabs {
+  display: flex;
+  /* border-bottom: 2px solid #ccc; */
+  justify-content: center;
+  /* border-bottom: solid 1px grey; */
+}
+.tab {
+  
+  padding: 5px 10px;
+  cursor: pointer;
+   /* border: 1px solid #ccc;
+  border-bottom: none;
+  background: #f0f0f0;  */
+}
+.tab.active {
+  background: rgba(61, 84, 112, 1);
+  color: white;
+  font-weight: bold;
+  border-bottom: solid 4px rgba(27, 38, 59, 1);
+}
+.tab-content {
+  display: none;
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+}
+.tab-content.active {
+  border: solid 1px grey;
+  border-radius: 10px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  gap: 10px;
+  flex-direction: row;
+  
+  
+}
+.tab-content.active div{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  
+}
+
+#doc{
+  padding: 1px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#doc div:last-child{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#doc div:last-child div{
+  border: solid 1px grey;
+    background-color: rgb(204, 204, 203);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    margin-top: 2px;
+}
+.tab-content.active input{
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px grey;
+}
+.tab-content.active input:hover{
+  border: solid 1px black;
+}
+.tab-content.active select{
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px grey;
+  font-size: 16px;
+}
+.tab-content.active select:hover{
+  border: solid 1px black;
+}
+.buttons {
+  text-align: right;
+  margin-top: 5px;
+  /* border: solid 1px; */
+  
+}
+.buttons button {
+  padding: 10px 15px 10px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  
+}
+
+/* fim tabs */
