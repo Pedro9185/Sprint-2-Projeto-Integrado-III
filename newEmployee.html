@@ -143,7 +143,12 @@
 
             <!-- Informações Pessoais -->
             <div id="tab-0" class="tab-content active">
+
               <div>
+                <label id="uploadFoto" for="upload-photo">
+                  Foto Perfil <br> <p>^</p>
+                </label>
+                <input type="file" name="photo" id="upload-photo" accept="image/*"/>
                 <input placeholder="Nome" type="text" name="nome" placeholder="Nome" required /><br />
                 <input type="text" placeholder="Data de Nascimento" onfocus="(this.type='date')" /><br />
                 <input placeholder="Telefone" type="tel" name="telefone" required /><br />
@@ -163,6 +168,7 @@
               </div>
 
               <div>
+                
                 <input placeholder="Cep" type="text" name="cep" required /><br />
                 <input placeholder="Endereço" type="text" name="endereço" required /><br />
                 <input placeholder="Bairro" type="text" name="bairro" required /><br />
@@ -199,8 +205,8 @@
 
               <div id="doc">
                 <div>
-                  <input placeholder="Número Identidade" type="text" name="identidade" required /><br />
-                  <input placeholder="Número CPF" type="text" name="cpf" required /><br />
+                  <input placeholder="Número Identidade" type="text" name="numeroIdentidade" required /><br />
+                  <input placeholder="Número CPF" type="text" name="numeroCpf" required /><br />
                 </div>
 
                 <div>
@@ -216,12 +222,12 @@
 
                   <div>
                     <label for="residencia">Enviar Comprovante de Residência</label>
-                    <input type="file" name="residencia">
+                    <input type="file" name="comprovanteResidencia">
                   </div>
 
                   <div>
                     <label for="nascimento">Enviar Certidão de Nascimento</label>
-                    <input type="file" name="nascimento">
+                    <input type="file" name="certidaoNascimento">
                   </div>
 
                   <div>
