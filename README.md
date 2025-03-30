@@ -1,111 +1,65 @@
-# Projeto Web
-Implementação de algumas páginas web utilizando HTLM, CSS e JAVASCRIPT da disciplina de DESENVOLVIMENTO PARA WEB do curso de Análise e Desenvolvimento de Sistemas da UFCA
+# Implementação do MVP Web
+Implementação de algumas páginas web utilizando HTLM, CSS e JAVASCRIPT da disciplina de Projeto Integrado do curso de Análise e Desenvolvimento de Sistemas da UFCA, seguindo as práticas aprendidas a respeito de layout, acessibilidade e responssividade
 
 O projeto se baseia em um Sistema de RH de pequeno porte
 
+O projeto usa o local Storage do javascript para simular o CRUD
+
 # Versão Live utilizando GitHub Pages:
 Você pode acessar o site pelo link:
-[Sistema TopRh](https://pedro9185.github.io/Projeto-WEB/)<br>
+[Sistema TopRh](https://pedro9185.github.io/)<br>
 
 # Telas Principais implementadas:
 - Página inicial com apresentação do sistema
 - Página de Login e Cadastro de usuários
-- Página Dashboard do sistema
+- Página Home/dashboard do sistema
+- Página Colaboradores com a relação dos funcionários cadastrados
+- Página Novo Colaborador cadastra um novo funcionário
+- Modal para visualizar as informações do colaborador 
+- Página Gestão de Ponto com informações dos funcionários(funcionalidade do ponto não implementada)
+- Página ver informações do ponto com dados státicos para simulação
+- Página Folha de pagamento (funcionalidades não implementadas)
+- Página Gestão de benefícios (funcionalidades não implementadas)
 - Página Sobre com informações da equipe
 # Funcionalidades Principais implementadas:
+
+### Geral
+- Uso de tags semânticas no HTML
+- Breadcrumbs em todas as páginas para fácil navegação
+- local Storage do javascript para cadastro, login e CRUD dos colaboradores
+- Responsividade: Adaptações para diferentes tamanhos de telas utilizando media queries, tamanhos principais consideerados: 1024px, 768px, 425px, 320px
+- Menu de navegação lateral responsível e retrátil para telas menores
+- Menu de usuário retrátil com Logout(remove o usuário logado do localStorage)
+
+### Página Inicial
 - Página Inicial com apresentação do sistema e cards interativos
+
+### Página Login/Cadastro
 - Login e Cadastro do usuario salvando dados no localStorage 
 - validação dos campos de login e feedback para o usuario caso ele não esteja cadastrado ou o email ou senha estiverem incorretos
 - validação dos campos de cadastro e feedback para o usuario caso as senhas não sejam iguais ou se já houver um email já cadastrado
+
+### Página Home
 - validação na pag home para não deixar o usuario acessar a pagina home sem ter um usuario logado
-- Responsividade: Adaptações para diferentes tamanhos de telas utilizando media queries:
-	- 1024px,768px,55px,425px,320px
-- Menu de navegação lateral responsível e retrátil para telas menores
 - Saudação para  o usuário logado baseado na hora do dia
-- Logout
 
-# Contratos de Comunicação - Sistema Top RH
+### Página Colaboradores
+- Principal mostrando todos os cadastradodos em uma tabela-Carrega os dados do local storage
+  - Botão Novo para cadastrar um novo colaborador
+    - Seleção de imagem e preview em tempo real
+    - Tabs para divisão das informações
+    - Feedback visual da escolha de arquivos de forma customizada
+    - Validação dos campos:
+      - Campos Obrigatórios com as devidas validações de formato e preenchimento
+      - Feedback visual por meio de mensagem na ultima tab e bordas vermelhas nos campos inválidos
+  - Botões de ação para:
+    - Ver: Abre um modal com todas as informações do formulário
+    - Editar: Carrega a página com as informações baseadas no id para edição
+    - Excluir: Remove a entrada baseado no id
+### Página Gestão de Ponto
+### Página Gestão de Benefícios
+### Página Folha de Pagamento
 
-## 1. Contrato para Login
-
-### Requisição
-```json
-{
-  "email": "usuario@exemplo.com",
-  "senha": "senha123"
-}
-```
-
-### Resposta de Sucesso
-```json
-{
-  "status": 200,
-  "mensagem": "Login realizado com sucesso",
-  "dados": {
-    "nome": "Nome do Usuário",
-    "email": "usuario@exemplo.com"
-  }
-}
-```
-
-### Resposta de Erro
-```json
-{
-  "status": 401,
-  "mensagem": "Email ou senha incorretos ou não existem",
-  "erro": "CREDENCIAIS_INVALIDAS"
-}
-```
-
-## 2. Contrato para Cadastro de Usuário
-
-### Requisição
-```json
-{
-  "nome": "Nome Completo",
-  "email": "novousuario@exemplo.com",
-  "senha": "senha123"
-}
-```
-
-### Resposta de Sucesso
-```json
-{
-  "status": 201,
-  "mensagem": "Usuário cadastrado com sucesso",
-  "dados": {
-    "nome": "Nome Completo",
-    "email": "novousuario@exemplo.com"
-  }
-}
-```
-
-### Resposta de Erro (email já cadastrado)
-```json
-{
-  "status": 409,
-  "mensagem": "Esse email já está cadastrado, verifique seu email e tente novamente",
-  "erro": "EMAIL_JA_EXISTE"
-}
-```
-
-### Resposta de Erro (senha inválida)
-```json
-{
-  "status": 400,
-  "mensagem": "A senha não pode ser menor que 6 digitos",
-  "erro": "SENHA_INVALIDA"
-}
-```
-
-### Resposta de Erro (senhas não coincidem)
-```json
-{
-  "status": 400,
-  "mensagem": "As senhas não coincidem",
-  "erro": "SENHAS_DIFERENTES"
-}
-```
 
 ## Desenvolvedores
 [Lucas Araujo](https://github.com/lal28)<br>

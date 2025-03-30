@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/home.css" />
 
   <link rel="stylesheet" href="./css/employees.css" />
 
@@ -373,10 +372,15 @@
           <div class="results amount">
             <p>Resultados por página</p>
             <div>
-              <p>5</p><img src="./img/drop.png" alt="drop">
+              <select name="qtdeResults" id="qtdeResults">
+                <option value="5">5</option>
+                <option value="5">10</option>
+                <option value="5">15</option>
+              </select>
             </div>
           </div>
           <div class="results">
+            
             <p>Mostrando 5 de 10 resultados</p>
           </div>
           <div class="results next">

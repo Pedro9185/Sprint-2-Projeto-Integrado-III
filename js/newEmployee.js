@@ -108,6 +108,84 @@ document.getElementById("foto").addEventListener("change", function (e) {
     }
 });
 
+//evento para mostrar qual arquivo está seleconado no input file
+
+//função encurtar nome
+function encurtarNome(nomeArquivo, limite) {
+    if (nomeArquivo.length <= limite) return nomeArquivo;
+
+    const partes = nomeArquivo.split(".");
+    const extensao = partes.pop(); // Pega a extensão
+    const nomeBase = partes.join("."); // Junta o restante do nome
+
+    if (nomeBase.length > limite - (extensao.length + 3)) {
+        return nomeBase.substring(0, limite - (extensao.length + 3)) + "... ." + extensao;
+    }
+
+    return nomeArquivo;
+}
+
+//comprovante de identidade
+document.getElementById("identidade").addEventListener("change", function(event) {
+    const file = event.target.files[0]; // Obtém o primeiro arquivo selecionado
+    const fileNameElement = document.getElementById("file-name-id");
+    if (file) {
+        fileNameElement.textContent = ">> " + encurtarNome(file.name, 20);
+    } else {
+        fileNameElement.textContent = ""; // Limpa se nenhum arquivo for selecionado
+    }
+});
+//comprovante de cpf
+document.getElementById("cpf").addEventListener("change", function(event) {
+    const file = event.target.files[0]; // Obtém o primeiro arquivo selecionado
+    const fileNameElement = document.getElementById("file-name-cpf");
+    if (file) {
+        fileNameElement.textContent = ">> " + encurtarNome(encurtarNome(file.name, 20));
+    } else {
+        fileNameElement.textContent = ""; // Limpa se nenhum arquivo for selecionado
+    }
+});
+//comprovante de residência
+document.getElementById("comprovanteResidencia").addEventListener("change", function(event) {
+    const file = event.target.files[0]; // Obtém o primeiro arquivo selecionado
+    const fileNameElement = document.getElementById("file-name-residencia");
+    if (file) {
+        fileNameElement.textContent = ">> " + encurtarNome(file.name, 20);
+    } else {
+        fileNameElement.textContent = ""; // Limpa se nenhum arquivo for selecionado
+    }
+});
+//comprovante de certidao nascimento
+document.getElementById("certidaoNascimento").addEventListener("change", function(event) {
+    const file = event.target.files[0]; // Obtém o primeiro arquivo selecionado
+    const fileNameElement = document.getElementById("file-name-nascimento");
+    if (file) {
+        fileNameElement.textContent = ">> " + encurtarNome(file.name, 20);
+    } else {
+        fileNameElement.textContent = ""; // Limpa se nenhum arquivo for selecionado
+    }
+});
+//comprovante de carteira de trabalhoo
+document.getElementById("cateiraTrabalho").addEventListener("change", function(event) {
+    const file = event.target.files[0]; // Obtém o primeiro arquivo selecionado
+    const fileNameElement = document.getElementById("file-name-trabalho");
+    if (file) {
+        fileNameElement.textContent = ">> " + encurtarNome(file.name, 20);
+    } else {
+        fileNameElement.textContent = ""; // Limpa se nenhum arquivo for selecionado
+    }
+});
+//comprovante de carteira de motorista
+document.getElementById("carteiramotorista").addEventListener("change", function(event) {
+    const file = event.target.files[0]; // Obtém o primeiro arquivo selecionado
+    const fileNameElement = document.getElementById("file-name-motorista");
+    if (file) {
+        fileNameElement.textContent = ">> " + encurtarNome(file.name, 20);
+    } else {
+        fileNameElement.textContent = ""; // Limpa se nenhum arquivo for selecionado
+    }
+});
+
 // Evento para o envio do formulário
 document
     .getElementById("cadastroForm")
@@ -247,7 +325,7 @@ document
         // Verifica se foi selecionada uma nova foto
 
         if (fotoInput.files.length > 0) {
-            converterImagemParaBase64(fotoInput.files[0], function (base64) {//<<<<<<<<<<<<salvar cadastro<<<<<<<<<<<<<<<
+            converterImagemParaBase64(fotoInput.files[0], function (base64) {
                 salvarCadastro(base64);
             });
         } else {
