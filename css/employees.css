@@ -86,6 +86,10 @@
 }
 .table tbody tr {
   border-bottom: solid 1px grey;
+
+}
+.table tbody:hover{
+  background-color: grey;
 }
 .table td,
 th {
@@ -98,6 +102,12 @@ th {
 }
 .actions img {
   width: 30px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.actions img:hover{
+  opacity: 1;
 }
 /* flex box: empurrar a div results para baixo:flex: 1 */
 .flex-space {

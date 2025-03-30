@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .nav {
+            margin-bottom: 20px;
+        }
+        .nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .profile-pic {
+            max-width: 100px;
+            max-height: 100px;
+        }
+        #imagemPreview {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#" onclick="mostrarPagina('formulario')">Formulário</a>
+        <a href="#" onclick="mostrarPagina('lista')">Lista de Cadastros</a>
+    </div>
+
+    <div id="formulario">
+        <h2>Formulário de Cadastro</h2>
+        <form id="cadastroForm">
+            <input type="text" id="id" name="id">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="">Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+            <div class="form-group">
+                <label for="foto">Foto de Perfil:</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+                <div id="imagemPreview"></div>
+            </div>
+            <button type="submit">Salvar</button>
+            <button type="button" onclick="limparFormulario()">Limpar</button>
+        </form>
+    </div>
+
+    <div id="lista" style="display: none;">
+        <h2>Lista de Cadastros</h2>
+        <table id="tabelaCadastros">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sexo</th>
+                    <th>Data de Nascimento</th>
+                    <th>Foto</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados serão inseridos aqui via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Função para mostrar a página escolhida (formulário ou lista)
+        function mostrarPagina(pagina) {
+            if (pagina === 'formulario') {
+                document.getElementById('formulario').style.display = 'block';
+                document.getElementById('lista').style.display = 'none';
+            } else {
+                document.getElementById('formulario').style.display = 'none';
+                document.getElementById('lista').style.display = 'block';
+                carregarCadastros();
+            }
+        }
+
+        // Formatar a data para exibição
+        function formatarData(dataString) {
+            const data = new Date(dataString);
+            return data.toLocaleDateString('pt-BR');
+        }
+
+        // Função para carregar os cadastros salvos no localStorage e exibir na tabela
+        function carregarCadastros() {
+            const tbody = document.querySelector('#tabelaCadastros tbody');
+            tbody.innerHTML = '';  // Limpa a tabela
+
+            // Recupera os cadastros do localStorage
+            const cadastros = JSON.parse(localStorage.getItem('cadastros')) || [];
+
+            // Para cada cadastro, cria uma linha na tabela
+            cadastros.forEach((cadastro, index) => {
+                const tr = document.createElement('tr');
+                
+                // Células para cada informação
+                const tdNome = document.createElement('td');
+                tdNome.textContent = cadastro.nome;
+                
+                const tdSexo = document.createElement('td');
+                tdSexo.textContent = cadastro.sexo.charAt(0).toUpperCase() + cadastro.sexo.slice(1);
+                
+                const tdData = document.createElement('td');
+                tdData.textContent = formatarData(cadastro.dataNascimento);
+                
+                const tdFoto = document.createElement('td');
+                if (cadastro.foto) {
+                    const img = document.createElement('img');
+                    img.src = cadastro.foto;
+                    img.className = 'profile-pic';
+                    tdFoto.appendChild(img);
+                } else {
+                    tdFoto.textContent = 'Sem foto';
+                }
+                
+                const tdAcoes = document.createElement('td');
+                
+                // Botão de editar
+                const btnEditar = document.createElement('button');
+                btnEditar.textContent = 'Editar';
+                btnEditar.onclick = function() {
+                    editarCadastro(index);
+                };
+                
+                // Botão de excluir
+                const btnExcluir = document.createElement('button');
+                btnExcluir.textContent = 'Excluir';
+                btnExcluir.style.backgroundColor = '#f44336';
+                btnExcluir.onclick = function() {
+                    excluirCadastro(index);
+                };
+                
+                tdAcoes.appendChild(btnEditar);
+                tdAcoes.appendChild(btnExcluir);
+                
+                // Adiciona todas as células à linha
+                tr.appendChild(tdNome);
+                tr.appendChild(tdSexo);
+                tr.appendChild(tdData);
+                tr.appendChild(tdFoto);
+                tr.appendChild(tdAcoes);
+                
+                // Adiciona a linha à tabela
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Função para editar um cadastro existente
+        function editarCadastro(index) {
+            // Recupera os cadastros
+            const cadastros = JSON.parse(localStorage.getItem('cadastros')) || [];
+            const cadastro = cadastros[index];
+            
+            // Preenche o formulário com os dados do cadastro
+            document.getElementById('id').value = index;
+            document.getElementById('nome').value = cadastro.nome;
+            document.getElementById('sexo').value = cadastro.sexo;
+            document.getElementById('dataNascimento').value = cadastro.dataNascimento;
+            
+            // Mostra a imagem se existir
+            const previewDiv = document.getElementById('imagemPreview');
+            if (cadastro.foto) {
+                previewDiv.innerHTML = `<img src="${cadastro.foto}" style="max-width: 200px; max-height: 200px;">`;
+            } else {
+                previewDiv.innerHTML = '';
+            }
+            
+            // Muda para a página do formulário
+            mostrarPagina('formulario');
+        }
+
+        // Função para excluir um cadastro
+        function excluirCadastro(index) {
+            if (confirm('Tem certeza que deseja excluir este cadastro?')) {
+                // Recupera os cadastros
+                const cadastros = JSON.parse(localStorage.getItem('cadastros')) || [];
+                
+                // Remove o cadastro pelo índice
+                cadastros.splice(index, 1);
+                
+                // Salva a lista atualizada de cadastros no localStorage
+                localStorage.setItem('cadastros', JSON.stringify(cadastros));
+                
+                // Recarrega a tabela
+                carregarCadastros();
+            }
+        }
+
+        // Função para limpar o formulário
+        function limparFormulario() {
+            document.getElementById('cadastroForm').reset();
+            document.getElementById('id').value = '';
+            document.getElementById('imagemPreview').innerHTML = '';
+        }
+
+        // Função para converter a imagem para Base64 (para salvar no localStorage)
+        function converterImagemParaBase64(file, callback) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                callback(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Evento para mostrar preview da imagem quando um arquivo é selecionado
+        document.getElementById('foto').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                converterImagemParaBase64(file, function(base64) {
+                    document.getElementById('imagemPreview').innerHTML = `<img src="${base64}" style="max-width: 200px; max-height: 200px;">`;
+                });
+            }
+        });
+
+        // Evento para o envio do formulário
+        document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Recupera os valores do formulário
+            const id = document.getElementById('id').value;
+            const nome = document.getElementById('nome').value;
+            const sexo = document.getElementById('sexo').value;
+            const dataNascimento = document.getElementById('dataNascimento').value;
+            const fotoInput = document.getElementById('foto');
+            
+            // Recupera os cadastros existentes do localStorage
+            const cadastros = JSON.parse(localStorage.getItem('cadastros')) || [];
+            
+            // Função para salvar o cadastro
+            function salvarCadastro(fotoBase64) {
+                const cadastro = {
+                    nome: nome,
+                    sexo: sexo,
+                    dataNascimento: dataNascimento,
+                    foto: fotoBase64
+                };
+                
+                if (id === '') {
+                    // Adiciona um novo cadastro
+                    cadastros.push(cadastro);
+                } else {
+                    // Atualiza um cadastro existente
+                    cadastros[id] = cadastro;
+                }
+                
+                // Salva no localStorage
+                localStorage.setItem('cadastros', JSON.stringify(cadastros));
+                
+                // Limpa o formulário
+                limparFormulario();
+                
+                // Exibe mensagem
+                alert('Cadastro salvo com sucesso!');
+                
+                // Volta para a lista de cadastros
+                mostrarPagina('lista');
+            }
+            
+            // Verifica se foi selecionada uma nova foto
+            if (fotoInput.files.length > 0) {
+                converterImagemParaBase64(fotoInput.files[0], function(base64) {
+                    salvarCadastro(base64);
+                });
+            } else {
+                // Se não tem nova foto e é edição, mantém a foto existente
+                if (id !== '') {
+                    salvarCadastro(cadastros[id].foto);
+                } else {
+                    // Cadastro novo sem foto
+                    salvarCadastro(null);
+                }
+            }
+        });
+
+        // Inicializa a página mostrando o formulário
+        mostrarPagina('formulario');
+    </script>
+</body>
+</html>

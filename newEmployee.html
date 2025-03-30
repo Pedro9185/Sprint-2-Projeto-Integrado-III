@@ -121,8 +121,8 @@
   <main>
     <div class="main">
       <section id="title-navegation">
-        <a href="employees.html">Colaboradores</a> >
-        <a href="#">Novo Colaborador</a>
+        <a id="breadcrumbs1" href="employees.html">Colaboradores</a> >
+        <a id="breadcrumbs2" href="#">Novo Colaborador</a>
       </section>
       <section id="mainContent">
         <!-- inicio do conteudo principal -->
@@ -145,23 +145,26 @@
             <div id="tab-0" class="tab-content active">
 
               <div>
-                <label id="uploadFoto" for="upload-photo">
-                  Foto Perfil <br> <p>^</p>
+                <div id="imagemPreview"> </div>
+
+                <label id="uploadFoto" for="foto">
+                  Escolher
                 </label>
-                <input type="file" name="photo" id="upload-photo" accept="image/*"/>
-                <input placeholder="Nome" type="text" name="nome" placeholder="Nome" required /><br />
-                <input type="text" placeholder="Data de Nascimento" onfocus="(this.type='date')" /><br />
-                <input placeholder="Telefone" type="tel" name="telefone" required /><br />
-                <input placeholder="E-mail" type="email" name="email" required /><br />
+                
+                <input type="file" name="foto" id="foto" accept="image/*"/>
+                <input placeholder="Nome" type="text" name="nome" id="nome" placeholder="Nome" required /><br />
+                <input type="text" placeholder="Data de Nascimento" id="dataNascimento" name="dataNascimento" onfocus="(this.type='date')" /><br />
+                <input placeholder="Telefone" type="tel" name="telefone" id="telefone" required /><br />
+                <input placeholder="E-mail" type="email" name="email" id="email" required /><br />
 
                 <select name="estadoCivil" id="estadoCivil">
-                  <option value="selecione">Estado Civil</option>
+                  <option value="">Estado Civil</option>
                   <option value="solteiro">Solteiro</option>
                   <option value="casado">Casado</option>
                 </select><br />
 
                 <select name="sexo" id="sexo">
-                  <option value="selecione">Sexo</option>
+                  <option value="">Sexo</option>
                   <option value="masculino">Masculino</option>
                   <option value="femininoo">Feminino</option>
                 </select><br />
@@ -169,32 +172,32 @@
 
               <div>
                 
-                <input placeholder="Cep" type="text" name="cep" required /><br />
-                <input placeholder="Endereço" type="text" name="endereço" required /><br />
-                <input placeholder="Bairro" type="text" name="bairro" required /><br />
-                <input placeholder="Cidade" type="text" name="cidade" required /><br />
-                <input placeholder="Estado" type="text" name="estado" required /><br />
-                <input placeholder="Pais" type="text" name="pais" required /><br />
+                <input placeholder="Cep" type="text" name="cep" id="cep" required /><br />
+                <input placeholder="Endereço" type="text" name="endereco" id="endereco" required /><br />
+                <input placeholder="Bairro" type="text" name="bairro" id="bairro" required /><br />
+                <input placeholder="Cidade" type="text" name="cidade" id="cidade" required /><br />
+                <input placeholder="Estado" type="text" name="estado" id="estado" required /><br />
+                <input placeholder="Pais" type="text" name="pais" id="pais" required /><br />
               </div>
             </div>
 
             <!-- Informações Profissionais -->
             <div id="tab-1" class="tab-content">
               <div>
-                <input placeholder="ID Funcionário" type="text" name="id" required /><br />
-                <input placeholder="Nome do Usuário" type="text" name="usuario" required /><br />
-                <input placeholder="Departamento" type="text" name="departamento" required /><br />
+                <input disabled placeholder="ID Funcionário" type="text" name="id" id="id" required /><br />
+                <input placeholder="Nome do Usuário" type="text" name="usuario" id="usuario" /><br />
+                <input placeholder="Departamento" type="text" name="departamento" id="departamento" required /><br />
               </div>
               <div>
-                <input placeholder="Email Corporativo" type="email" name="email" required /><br />
+                <input placeholder="Email Corporativo" type="emailCorp" name="emailCorp" id="emailCorp" required /><br />
 
                 <select name="ativo" id="ativo">
-                  <option value="selecione">Funcionário Ativo</option>
+                  <option value="">Funcionário Ativo</option>
                   <option value="sim">Sim</option>
                   <option value="não">Não</option>
                 </select><br />
 
-                <input type="text" placeholder="Data de Admissão" onfocus="(this.type='date')" /><br />
+                <input type="text" placeholder="Data de Admissão" id="dataAdmissao" name="dataAdmissao" onfocus="(this.type='date')" /><br />
 
               </div>
 
@@ -205,39 +208,39 @@
 
               <div id="doc">
                 <div>
-                  <input placeholder="Número Identidade" type="text" name="numeroIdentidade" required /><br />
-                  <input placeholder="Número CPF" type="text" name="numeroCpf" required /><br />
+                  <input placeholder="Número Identidade" type="text" id="numeroIdentidade" name="numeroIdentidade" required /><br />
+                  <input placeholder="Número CPF" type="text" name="numeroCpf" id="numeroCpf" required /><br />
                 </div>
 
                 <div>
                   <div>
                     <label for="identidade">Enviar Identidade</label>
-                    <input type="file" name="identidade">
+                    <input type="file" id="identidade" name="identidade" >
                   </div>
 
                   <div>
                     <label for="cpf">Enviar CPF</label>
-                    <input type="file" name="cpf">
+                    <input type="file" id="cpf" name="cpf">
                   </div>
 
                   <div>
                     <label for="residencia">Enviar Comprovante de Residência</label>
-                    <input type="file" name="comprovanteResidencia">
+                    <input type="file" id="comprovanteResidencia" name="comprovanteResidencia">
                   </div>
 
                   <div>
                     <label for="nascimento">Enviar Certidão de Nascimento</label>
-                    <input type="file" name="certidaoNascimento">
+                    <input type="file" id="certidaoNascimento" name="certidaoNascimento" >
                   </div>
 
                   <div>
                     <label for="cateiraTrabalho">Enviar Carteira de Trabalho</label>
-                    <input type="file" name="cateiraTrabalho">
+                    <input type="file" id="cateiraTrabalho" name="cateiraTrabalho" >
                   </div>
 
                   <div>
                     <label for="carteiramotorista">Enviar Carteira de Motorista</label>
-                    <input type="file" name="carteiramotorista">
+                    <input type="file" id="carteiramotorista" name="carteiramotorista">
                   </div>
 
 
