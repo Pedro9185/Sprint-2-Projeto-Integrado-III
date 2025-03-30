@@ -66,29 +66,7 @@
   padding-top: 118px;
 }
 
-#doc {
-  padding: 1px;
-  display: flex;
-  flex-wrap: wrap;
-}
-#doc div:last-child {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-#doc div:last-child div {
-  border: solid 1px grey;
-  background-color: rgb(204, 204, 203);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-  color: rgb(0, 0, 0);
-  margin-top: 2px;
-}
+
 .tab-content.active input {
   font-size: 16px;
   padding: 10px;
@@ -143,6 +121,42 @@
   background-position: center;
 }
 
+#doc {
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+#envDocContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.envDoc{
+ border: solid 1px grey;
+ align-content: center;
+ align-items: center;
+ max-width: 180px;
+ height: 60px;
+ border-radius: 5px;
+ color: rgb(80, 80, 80);
+}
+.envDoc:hover{
+  border: solid 1px rgb(0, 0, 0);
+}
+.envDoc input{
+ display: none;
+}
+.envDoc label:hover{
+ cursor: pointer;
+color: black;
+}
+
 .buttons {
   text-align: right;
   margin-top: 5px;
@@ -152,11 +166,39 @@
   padding: 10px 15px 10px 15px;
   margin-right: 10px;
   cursor: pointer;
-  border: solid 1px;
+  border: solid 1px grey;
   border-radius: 5px;
 }
 .buttons button:hover {
   background: rgba(61, 84, 112, 0.5);
+}
+#alertas{
+  display: none;
+  border: solid 1px grey;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  transition: 0.3s;
+  justify-content: center;
+  
+}
+#textAlertas{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  font-size: 14px;
+  
+}
+#textAlertas div{
+  padding: 0px 2px 0px 2px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* fim tabs */

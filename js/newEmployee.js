@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const index = urlParams.get("id"); // Pega o ID da URL
 
     if (index) {
-        document.title="Sistema RH TopRH-Editar Colaborador"
+        document.title = "Sistema RH TopRH-Editar Colaborador"
         document.getElementById("breadcrumbs2").textContent = "Editar Colaborador";
         editarCadastro(index); // Se tem ID, carrega os dados
     }
@@ -44,9 +44,9 @@ function editarCadastro(index) {
     const cadastro = cadastros[index];
 
     // Preenche o formulário com os dados do cadastro
-    
 
-    
+
+
     document.getElementById('nome').value = cadastro.nome;
     document.getElementById('dataNascimento').value = cadastro.dataNascimento;
     document.getElementById('telefone').value = cadastro.telefone;
@@ -248,3 +248,125 @@ function limpar() {
 }
 
 //validações
+//mudar a borda do campo para normal se comecar a digitar
+function validar() {
+    const inputs = document.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.addEventListener("input", function () {
+            this.style.border = "1px solid grey"; // Aplica a borda apenas ao input atual
+            document.getElementById("textAlertas").innerHTML="";
+            document.getElementById("alertas").style.display = "none";
+        });
+    });
+
+    var fotoInput = document.getElementById('foto');//sem validação por enquanto
+    //campo nome vazio
+    var nome = document.getElementById('nome').value;
+    if (nome == "") {
+        document.getElementById("textAlertas").innerHTML +="<div>Campo Nome está vazio!</div>"
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('nome').style.border = "solid 1px red";
+    }
+    var dataNascimento = document.getElementById('dataNascimento').value;
+    //campo telefone vazio ou inválido
+    var telefone = document.getElementById('telefone').value;
+    const telefoneRegex = /^(\(?\d{2}\)?\s?)?(9\d{4}[-]?\d{4})$/;
+    if (telefone == "") {
+        document.getElementById("textAlertas").innerHTML +="<div>Campo Telefone está vazio!</div>"
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('telefone').style.border = "solid 1px red";
+    }
+    if (!telefoneRegex.test(telefone)) {
+        document.getElementById("textAlertas").innerHTML +="<div>Telefone inválido! </div>"
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('telefone').style.border = "solid 1px red";
+    }
+    //campo email vazio e inválido
+    var email = document.getElementById('email').value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email == "") {
+        document.getElementById("textAlertas").innerHTML +="<div>Campo Email está vazio!</div> "
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('email').style.border = "solid 1px red";
+    }
+    if (!emailRegex.test(email)) {
+        document.getElementById("textAlertas").innerHTML +="<div>Email inválido!</div> "
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('email').style.border = "solid 1px red";
+    }
+    var estadoCivil = document.getElementById('estadoCivil').value;
+    var sexo = document.getElementById('sexo').value;
+    var cep = document.getElementById('cep').value;
+    var endereco = document.getElementById('endereco').value;
+    var bairro = document.getElementById('bairro').value;
+    var cidade = document.getElementById('cidade').value;
+    var estado = document.getElementById('estado').value;
+    var pais = document.getElementById('pais').value;
+
+    //<!-- Informações Profissionais -->
+    var id = document.getElementById('id').value;
+    //nome do usuario vazio
+    var usuario = document.getElementById('usuario').value;
+    if (usuario == "") {
+        document.getElementById("textAlertas").innerHTML +="<div>Campo Usuário está vazio!</div> "
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('usuario').style.border = "solid 1px red";
+    }
+    //nome do departamento vazio
+    var departamento = document.getElementById('departamento').value;
+    if (departamento == "") {
+        document.getElementById("textAlertas").innerHTML +="<div>Campo Departamento está vazio!</div> "
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('departamento').style.border = "solid 1px red";
+    }
+    //campo email coorporativo vazio e inválido
+    var emailCorp = document.getElementById('emailCorp').value;
+    if (emailCorp == "") {
+        document.getElementById("textAlertas").innerHTML +="<div>Campo Email Corporativo está vazio!</div>"
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('emailCorp').style.border = "solid 1px red";
+    }
+    if (!emailRegex.test(emailCorp)) {
+        document.getElementById("textAlertas").innerHTML +="<div>Email Corporativo  inválido!</div> "
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('emailCorp').style.border = "solid 1px red";
+    }
+    var ativo = document.getElementById('ativo').value;
+    var dataAdmissao = document.getElementById('dataAdmissao').value;
+
+    //<!-- Documentos -->
+    //numero identidade vazio
+    var numeroIdentidade = document.getElementById('numeroIdentidade').value;
+    if (numeroIdentidade == "") {
+        document.getElementById("textAlertas").innerHTML +="<div>Campo Numero da Identidade está vazio!</div> "
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('numeroIdentidade').style.border = "solid 1px red";
+    }
+    //numero cpf vazio
+    var numeroCpf = document.getElementById('numeroCpf').value;
+    if (numeroCpf == "") {
+        document.getElementById("textAlertas").innerHTML +="<div>Campo CPF está vazio!</div> "
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('numeroCpf').style.border = "solid 1px red";
+    }
+
+    //extrair apenas os nomes dos arquivos pra guardar no local storage
+    var identidade = document.getElementById('identidade');
+    var nomeArquivoIdentidade = identidade.files.length > 0 ? identidade.files[0].name : null;
+
+    var cpf = document.getElementById('cpf');
+    var nomeArquivoCpf = cpf.files.length > 0 ? cpf.files[0].name : null;
+
+    var comprovanteResidencia = document.getElementById('comprovanteResidencia');
+    var nomeArquivoComprovanteResidencia = comprovanteResidencia.files.length > 0 ? comprovanteResidencia.files[0].name : null;
+
+    var certidaoNascimento = document.getElementById('certidaoNascimento');
+    var nomeArquivoCertidaoNascimento = certidaoNascimento.files.length > 0 ? certidaoNascimento.files[0].name : null;
+
+    var carteiraTrabalho = document.getElementById('cateiraTrabalho');
+    var nomeArquivoCateiraTrabalho = carteiraTrabalho.files.length > 0 ? carteiraTrabalho.files[0].name : null;
+
+    var carteiramotorista = document.getElementById('carteiramotorista');
+    var nomeArquivoCarteiramotorista = carteiramotorista.files.length > 0 ? carteiramotorista.files[0].name : null;
+}

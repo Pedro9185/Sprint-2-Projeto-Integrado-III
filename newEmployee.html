@@ -154,7 +154,7 @@
                 <input type="file" name="foto" id="foto" accept="image/*"/>
                 <input placeholder="Nome" type="text" name="nome" id="nome" placeholder="Nome" required /><br />
                 <input type="text" placeholder="Data de Nascimento" id="dataNascimento" name="dataNascimento" onfocus="(this.type='date')" /><br />
-                <input placeholder="Telefone" type="tel" name="telefone" id="telefone" required /><br />
+                <input placeholder="Telefone" type="tel" name="telefone" id="telefone"   required /><br />
                 <input placeholder="E-mail" type="email" name="email" id="email" required /><br />
 
                 <select name="estadoCivil" id="estadoCivil">
@@ -172,12 +172,12 @@
 
               <div>
                 
-                <input placeholder="Cep" type="text" name="cep" id="cep" required /><br />
-                <input placeholder="Endereço" type="text" name="endereco" id="endereco" required /><br />
-                <input placeholder="Bairro" type="text" name="bairro" id="bairro" required /><br />
-                <input placeholder="Cidade" type="text" name="cidade" id="cidade" required /><br />
-                <input placeholder="Estado" type="text" name="estado" id="estado" required /><br />
-                <input placeholder="Pais" type="text" name="pais" id="pais" required /><br />
+                <input placeholder="Cep" type="text" name="cep" id="cep"/><br />
+                <input placeholder="Endereço" type="text" name="endereco" id="endereco"/><br />
+                <input placeholder="Bairro" type="text" name="bairro" id="bairro"/><br />
+                <input placeholder="Cidade" type="text" name="cidade" id="cidade"/><br />
+                <input placeholder="Estado" type="text" name="estado" id="estado"/><br />
+                <input placeholder="Pais" type="text" name="pais" id="pais"/><br/>
               </div>
             </div>
 
@@ -185,7 +185,7 @@
             <div id="tab-1" class="tab-content">
               <div>
                 <input disabled placeholder="ID Funcionário" type="text" name="id" id="id" required /><br />
-                <input placeholder="Nome do Usuário" type="text" name="usuario" id="usuario" /><br />
+                <input placeholder="Nome do Usuário" type="text" name="usuario" id="usuario" required /><br />
                 <input placeholder="Departamento" type="text" name="departamento" id="departamento" required /><br />
               </div>
               <div>
@@ -212,33 +212,34 @@
                   <input placeholder="Número CPF" type="text" name="numeroCpf" id="numeroCpf" required /><br />
                 </div>
 
-                <div>
-                  <div>
+                <div id="envDocContainer">
+                  <div class="envDoc">
                     <label for="identidade">Enviar Identidade</label>
+                    <p></p>
                     <input type="file" id="identidade" name="identidade" >
                   </div>
 
-                  <div>
+                  <div class="envDoc">
                     <label for="cpf">Enviar CPF</label>
                     <input type="file" id="cpf" name="cpf">
                   </div>
 
-                  <div>
+                  <div class="envDoc">
                     <label for="residencia">Enviar Comprovante de Residência</label>
                     <input type="file" id="comprovanteResidencia" name="comprovanteResidencia">
                   </div>
 
-                  <div>
+                  <div class="envDoc">
                     <label for="nascimento">Enviar Certidão de Nascimento</label>
                     <input type="file" id="certidaoNascimento" name="certidaoNascimento" >
                   </div>
 
-                  <div>
+                  <div class="envDoc">
                     <label for="cateiraTrabalho">Enviar Carteira de Trabalho</label>
-                    <input type="file" id="cateiraTrabalho" name="cateiraTrabalho" >
+                    <input type="file" id="cateiraTrabalho" name="cateiraTrabalho">
                   </div>
 
-                  <div>
+                  <div class="envDoc">
                     <label for="carteiramotorista">Enviar Carteira de Motorista</label>
                     <input type="file" id="carteiramotorista" name="carteiramotorista">
                   </div>
@@ -251,7 +252,11 @@
               </div>
 
             </div>
-
+              
+            <!-- Alertas -->
+            <div id="alertas">
+              <p id="textAlertas"></p>
+            </div>
             <!-- Botões de Navegação -->
             <div class="buttons">
               <button type="button" id="btnAnterior" onclick="mudarAba(-1)" disabled>
@@ -260,7 +265,7 @@
               <button type="button" id="btnProximo" onclick="mudarAba(1)">
                 Próximo
               </button>
-              <button type="submit" id="btnSalvar" style="display: none">
+              <button type="submit" id="btnSalvar" style="display: none" onclick="validar()">
                 Salvar
               </button>
             </div>
