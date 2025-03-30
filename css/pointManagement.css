@@ -74,10 +74,24 @@
   font-weight: 200;
   color: rgb(26, 26, 26);
   margin-top: 10px;
+  padding: 5px;
+  
 }
 
 .table_row {
   border-bottom: 1px solid black;
+ 
+}
+
+.profile-pic {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: solid 2px grey;
 }
 
 .div_pesquisa {
@@ -202,6 +216,7 @@ th {
   .table_point_management {
     font-size: 12px;
   }
+  
 
   .div_table_point_management {
     margin-top: 20px;

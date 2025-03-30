@@ -37,6 +37,13 @@
   border-radius: 5px;
   padding: 10px;
   font-size: 18px;
+
+  background-color: rgba(224, 225, 221, 1);
+  padding-left: 30px;
+  background-image: url("../assets/icons/Vector.svg");
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-size: 16px;
 }
 .filter-space a {
   text-decoration: none;
@@ -44,31 +51,53 @@
   color: white;
   padding: 5px;
   border-radius: 5px;
+  border: solid 1px grey;
+  
+}
+.filter-space a:hover{
+  background-color: rgb(27, 38, 59, 1);
 }
 .filter-space button {
   /* border: solid 1px grey; */
   border-radius: 5px;
+  border: solid 1px;
   padding: 5px;
   font-size: 18px;
+  cursor: pointer;
 }
 #showFilters-space{
-  display: flex;
-  justify-content: space-between;
+  display: none;
+  justify-content: left;
   padding: 5px;
   box-sizing: border-box;
-  border: solid 1px red; 
+  /* border: solid 1px red;  */
   gap: 10px; /* Espaçamento entre os elementos */
   width: 100%;
   align-items: center;
-  display: none;
+  
 }
 #showFilters-space.show{
   display: flex;
+}
+#showFilters-space button{
+  border-radius: 5px;
+  border: solid 1px;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+#showFilters-space select{
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: rgba(224, 225, 221, 1);
 }
 .table-space {
   /* border: solid 1px red; */
   padding: 20px;
   margin-bottom: 10px;
+  overflow-x: auto;
 }
 
 .table {
@@ -93,8 +122,11 @@ th {
   background-color: rgb(159, 159, 159);
 }
 .profile-pic{
+  display: flex;
   width: 50px;
   height: 50px;
+  min-width: 50px;
+  min-height: 50px;
   object-fit: cover;
   border-radius: 5px;
   border: solid 2px grey;
@@ -277,9 +309,127 @@ th {
 }
 
 /* Responsividade */
+@media screen and (max-width: 1024px) {
+  body{
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .filter-space {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-actions {
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+  
+  #showFilters-space {
+    flex-direction: column;
+  }
+  
+  #showFilters-space > div {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .showFilters-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .showFilters-actions select {
+    width: 100%;
+  }
   .form-group {
       flex: 1 0 100%;
       margin-bottom: 12px;
   }
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .form-section {
+    padding: 15px 10px;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+
 }
+/* Extra small screens */
+@media screen and (max-width: 425px) {
+  #conteinerLeft a:nth-child(2) {
+    display: none; /* Hide logo on very small screens */
+  }
+  
+  #conteinerRight {
+    gap: 5px;
+  }
+  
+  #userContainer img, #notifContainer img, #modesContainer img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Modal adjustments for very small screens */
+  .modal-content {
+    padding: 10px;
+  }
+  
+  .form-group {
+    margin: 0 5px 12px;
+  }
+  
+  .form-control {
+    padding: 8px;
+  }
+  
+  .close {
+    font-size: 30px;
+  }
+  
+  /* Make main content padding smaller */
+  #mainContent {
+    padding: 15px;
+    margin-top: 30px;
+  }
+}
+/* Very small screens */
+@media screen and (max-width: 320px) {
+  .filter-space input {
+    padding: 8px;
+    padding-left: 25px;
+    font-size: 16px;
+    background-size: 14px;
+  }
+  
+  .filter-space a, .filter-space button {
+    font-size: 14px;
+    padding: 4px;
+  }
+  
+  #showFilters-space button, #showFilters-space select {
+    font-size: 14px;
+    padding: 4px;
+  }
+  
+  .form-label {
+    font-size: 14px;
+  }
+  
+  .form-control {
+    font-size: 14px;
+  }
+  
+  .section-title {
+    font-size: 1rem;
+  }
+}
+
