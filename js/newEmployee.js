@@ -247,8 +247,9 @@ function limpar() {
     localStorage.clear();
 }
 
-//validações
-//mudar a borda do campo para normal se comecar a digitar
+//VALIDAÇÕES
+//todos os campos estão listados, caso queira adicionar alguma validação no futuro
+//mudar a borda do campo para normal se houver mudança
 function validar() {
     const inputs = document.querySelectorAll("input");
 
@@ -282,7 +283,7 @@ function validar() {
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('telefone').style.border = "solid 1px red";
     }
-    //campo email vazio e inválido
+    //campo email vazio ou inválido
     var email = document.getElementById('email').value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email == "") {
@@ -343,13 +344,46 @@ function validar() {
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('numeroIdentidade').style.border = "solid 1px red";
     }
-    //numero cpf vazio
+    //numero cpf vazio e validação oficial
     var numeroCpf = document.getElementById('numeroCpf').value;
     if (numeroCpf == "") {
         document.getElementById("textAlertas").innerHTML +="<div>Campo CPF está vazio!</div> "
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('numeroCpf').style.border = "solid 1px red";
     }
+    function validarCPF(cpf) {
+        cpf = cpf.replace(/\D/g, ""); // Remove tudo que não for número
+    
+        if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // Impede CPFs como "111.111.111-11"
+    
+        let soma = 0, resto;
+    
+        // Cálculo do primeiro dígito verificador
+        for (let i = 0; i < 9; i++) soma += cpf[i] * (10 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto != cpf[9]) return false;
+    
+        soma = 0;
+        // Cálculo do segundo dígito verificador
+        for (let i = 0; i < 10; i++) soma += cpf[i] * (11 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto != cpf[10]) return false;
+    
+        return true;
+    }
+    if(!validarCPF(numeroCpf)){
+        document.getElementById("textAlertas").innerHTML +="<div>CPF inválido!</div> "
+        document.getElementById("alertas").style.display = "flex";
+        document.getElementById('numeroCpf').style.border = "solid 1px red";
+    }
+    
+    // Testes
+    console.log(validarCPF("123.456.789-09")); // false (CPF inválido)
+    console.log(validarCPF("111.444.777-35")); // true (CPF válido)
+    
+
 
     //extrair apenas os nomes dos arquivos pra guardar no local storage
     var identidade = document.getElementById('identidade');
