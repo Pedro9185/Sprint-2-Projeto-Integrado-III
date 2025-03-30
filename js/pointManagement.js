@@ -12,13 +12,13 @@ function mostrarFuncionarios() {
   listaFuncionarios.map((employe) => {
     tbody.innerHTML += `
     <tr class="table_row" id=${employe.id}>
-                                <th scope="row" class=""><img src="${employe.foto}" alt="imagem-funcionario"
-                                        class="imagem-funcionario"></th>
-                                <td colspan="3">${employe.nome}</td>
+                                <td scope="row" class=""><img src="${employe.foto}" alt="imagem-funcionario"
+                                        ></td>
+                                <td >${employe.nome}</td>
                                
 
 
-                                <td> <a href="./viewInfo.html" class="link_table">Ver informações</a></td>
+                                <td> <a href="./viewInfo.html" class="link_table">Ver </a></td>
 
 
                             </tr>
