@@ -96,7 +96,11 @@ function carregarCadastros() {
       img.className = 'profile-pic';
       tdFoto.appendChild(img);
     } else {
-      tdFoto.textContent = 'Sem foto';
+      const img = document.createElement('img');
+      img.src = "../img/profileNoPicture.png";
+      img.className = 'profile-pic';
+      img.style.opacity="0.5";
+      tdFoto.appendChild(img);
     }
 
     // Células para Nome
