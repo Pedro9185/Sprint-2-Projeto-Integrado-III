@@ -57,8 +57,13 @@ Você pode acessar o site pelo link:
     - Editar: Carrega a página com as informações baseadas no id para edição
     - Excluir: Remove a entrada baseado no id
 ### Página Gestão de Ponto
+  - Pagina inicial mostrando os funcionarios cadastrados puxando os dados direto do local storage
+  - layout responsivo para varios tamanhos mobile e desktop
+  - pagina stática para ver as informações do funcionario
 ### Página Gestão de Benefícios
 ### Página Folha de Pagamento
+  - Pagina inicial mostrando os funcionarios cadastrados puxando os dados direto do local storage
+  - layout responsivo para varios tamanhos mobile e desktop
 
 
 ## Desenvolvedores
