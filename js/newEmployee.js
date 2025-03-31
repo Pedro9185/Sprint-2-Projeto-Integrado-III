@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index) {
         document.title = "Sistema RH TopRH-Editar Colaborador";
         document.getElementById("breadcrumbs2").textContent = "Editar Colaborador";
+        document.getElementById("title-h3").textContent = "Editar Colaborador";
         editarCadastro(index); // Se tem ID, carrega os dados
     }
 });

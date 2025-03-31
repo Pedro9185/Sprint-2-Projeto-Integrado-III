@@ -1,3 +1,12 @@
+//aplicar o estilo ao menu lateral
+document.addEventListener("DOMContentLoaded", function() {
+  let div = document.getElementById("navegationPonto");
+  div.style.backgroundColor = "rgba(27, 38, 59, 1)";
+  div.style.color = "rgb(255, 255, 255)";
+  let img = document.getElementById("g-ponto");
+  img.style.filter="brightness(0) invert(1)";
+});
+
 const cadastros = JSON.parse(localStorage.getItem("cadastros")) || [];
 
 let listaFuncionarios = cadastros;

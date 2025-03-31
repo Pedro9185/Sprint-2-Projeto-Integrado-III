@@ -1,10 +1,4 @@
-#navegationPonto{
-  background-color: rgba(27, 38, 59, 1);
-  color: rgb(255, 255, 255);
-}
-#navegationPonto img {
-  filter: brightness(0) invert(1);
-}
+
 
 #title-navegation a {
   text-decoration: none;

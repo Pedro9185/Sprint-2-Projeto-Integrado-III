@@ -1,3 +1,5 @@
+
+
 const cadastros = JSON.parse(localStorage.getItem("cadastros")) || [];
 
 let listaFuncionarios = cadastros;
