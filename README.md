@@ -61,6 +61,9 @@ Você pode acessar o site pelo link:
   - layout responsivo para varios tamanhos mobile e desktop
   - pagina stática para ver as informações do funcionario
 ### Página Gestão de Benefícios
+ - Página inicial mostrando os pedidos de benefícios pricipais alimentação,  refeição e vale transporte
+ - 
+  - 
 ### Página Folha de Pagamento
   - Pagina inicial mostrando os funcionarios cadastrados puxando os dados direto do local storage
   - layout responsivo para varios tamanhos mobile e desktop
