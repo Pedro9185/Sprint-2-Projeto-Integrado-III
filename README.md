@@ -7,7 +7,7 @@ O projeto usa o local Storage do javascript para simular o CRUD
 
 # Versão Live utilizando GitHub Pages:
 Você pode acessar o site pelo link:
-[Sistema TopRh](https://pedro9185.github.io/)<br>
+[Sistema TopRh](https://pedro9185.github.io/Sprint-2-Projeto-Integrado-III/)<br>
 
 # Telas Principais implementadas:
 - Página inicial com apresentação do sistema
