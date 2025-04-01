@@ -1,9 +1,9 @@
 
-  #title-navegation a {
-    text-decoration: none;
-    font-weight: bolder;
-    color: rgb(69, 69, 69);
-  }
+#title-navegation a {
+  text-decoration: none;
+  color: rgb(69, 69, 69);
+  font-size: 14px;
+}
   #title-navegation a:hover {
     color: black;
   }
