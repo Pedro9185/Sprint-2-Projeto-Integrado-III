@@ -40,21 +40,21 @@
                 <div id="userContainer" onclick="menuToggle()"><img src="./img/user_white.png" alt="userimage" /></div>
                 <div id="userMenu">
 
-                    <h2>Nome do usuario<br /><span>Cargo</span></h3>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <div><img src="./img/user_black.png" alt="usericon" />Perfil</div>
-                                </a>
-                            </li>
+                    <h3>Nome do usuario<br /><span>Cargo</span></h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div><img src="./img/user_black.png" alt="usericon" />Perfil</div>
+                            </a>
+                        </li>
 
-                            <li>
-                                <a href="#">
-                                    <div><img src="./img/out_black.png" alt="logouticon" />Sair</div>
-                                </a>
+                        <li>
+                            <a href="#">
+                                <div><img src="./img/out_black.png" alt="logouticon" />Sair</div>
+                            </a>
 
-                            </li>
-                        </ul>
+                        </li>
+                    </ul>
 
                 </div>
             </a>
@@ -112,58 +112,57 @@
     <main>
         <div class="main">
             <section id="title-navegation">
-
                 <a href="./payroll.html">Folha de Pagamento</a>
+            </section>
+            
+            <section id="mainContent">
+                <article id="titulo">
+                    <h3 class="color_title"></h3>
+                </article>
+                <div class="div_pesquisa">
+
+                    <input type="search" name="pesquisar" id="pesquisa" placeholder="Pesquisar..."
+                        class="icon-placeholder-pesquisa">
 
 
-                <section id="mainContent">
-                    <article id="titulo">
-                        <h3 class="color_title"></h3>
-                    </article>
-                    <div class="div_pesquisa">
+                    <select name="" id="filtros" class="icone-placeholder-filtros">
+                        <option value="nome">Nome</option>
+                        <option value="id">Id</option>
+                        <option value="tel">Telefone</option>
+                        <option value="cargo">Cargo</option>
+                        <option value="data">Mês</option>
+                    </select>
 
-                        <input type="search" name="pesquisar" id="pesquisa" placeholder="Pesquisar..."
-                            class="icon-placeholder-pesquisa">
+                    <input type="date" id="date">
+                </div>
 
+                <div class="div_table_point_management">
+                    <table class="table_point_management">
+                        <thead>
+                            <th>
+                                Nome
+                            </th>
 
-                        <select name="" id="filtros" class="icone-placeholder-filtros">
-                            <option value="nome">Nome</option>
-                            <option value="id">Id</option>
-                            <option value="tel">Telefone</option>
-                            <option value="cargo">Cargo</option>
-                            <option value="data">Mês</option>
-                        </select>
+                            <th>
+                                Telefone
+                            </th>
+                            <th>
+                                Cargo
+                            </th>
+                            <th>
+                                Ações
+                            </th>
+                        </thead>
 
-                        <input type="date" id="date">
-                    </div>
-
-                    <div class="div_table_point_management">
-                        <table class="table_point_management">
-                            <thead>
-                                <th>
-                                    Nome
-                                </th>
-
-                                <th>
-                                    Telefone
-                                </th>
-                                <th>
-                                    Cargo
-                                </th>
-                                <th>
-                                    Ações
-                                </th>
-                            </thead>
-
-                            <tbody id="tbody">
+                        <tbody id="tbody">
 
 
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
+                </div>
 
-                </section>
+            </section>
         </div>
     </main>
     <footer>
