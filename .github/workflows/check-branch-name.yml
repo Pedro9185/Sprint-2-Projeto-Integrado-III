@@ -1,0 +1,20 @@
+name: Checar padrão de nome da branch
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar nome da branch
+        run: |
+          echo "Branch: ${{ github.head_ref }}"
+          if [[ ! "${{ github.head_ref }}" =~ ^(feature|bugfix|hotfix|release)/.+$ ]]; then
+            echo "❌ Nome da branch inválido: '${{ github.head_ref }}'"
+            echo "Use os padrões: feature/, bugfix/, hotfix/, release/"
+            exit 1
+          else
+            echo "✅ Nome da branch está válido."
+          fi
