@@ -1,0 +1,25 @@
+name: Validação de HTML com HTMLHint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  html-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar HTMLHint
+        run: npm install -g htmlhint
+
+      - name: Rodar HTMLHint nos arquivos HTML
+        run: htmlhint "**/*.html"
