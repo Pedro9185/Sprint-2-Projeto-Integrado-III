@@ -1,6 +1,7 @@
 {
   "name": "sprint-2-projeto-integrado-iii",
   "version": "1.0.0",
+  "type": "module",
   "description": "Implementação de algumas páginas web utilizando HTLM, CSS e JAVASCRIPT da disciplina de Projeto Integrado do curso de Análise e Desenvolvimento de Sistemas da UFCA, seguindo as práticas aprendidas a respeito de layout, acessibilidade e responssividade",
   "main": "index.js",
   "scripts": {

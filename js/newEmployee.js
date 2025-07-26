@@ -368,7 +368,7 @@ function validar() {
     //campo nome vazio
     var nome = document.getElementById('nome').value;
     if (nome == "") {
-        document.getElementById("textAlertas").innerHTML += "<div>Campo Nome está vazio!</div>"
+        document.getElementById("textAlertas").innerHTML += "<div>Campo Nome está vazio!</div>";
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('nome').style.border = "solid 1px red";
 
@@ -378,12 +378,12 @@ function validar() {
     var telefone = document.getElementById('telefone').value;
     const telefoneRegex = /^(\(?\d{2}\)?\s?)?(9\d{4}[-]?\d{4})$/;
     if (telefone == "") {
-        document.getElementById("textAlertas").innerHTML += "<div>Campo Telefone está vazio!</div>"
+        document.getElementById("textAlertas").innerHTML += "<div>Campo Telefone está vazio!</div>";
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('telefone').style.border = "solid 1px red";
     }
     if (!telefoneRegex.test(telefone)) {
-        document.getElementById("textAlertas").innerHTML += "<div>Telefone inválido! </div>"
+        document.getElementById("textAlertas").innerHTML += "<div>Telefone inválido! </div>";
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('telefone').style.border = "solid 1px red";
     }
@@ -391,12 +391,12 @@ function validar() {
     var email = document.getElementById('email').value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email == "") {
-        document.getElementById("textAlertas").innerHTML += "<div>Campo Email está vazio!</div> "
+        document.getElementById("textAlertas").innerHTML += "<div>Campo Email está vazio!</div> ";
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('email').style.border = "solid 1px red";
     }
     if (!emailRegex.test(email)) {
-        document.getElementById("textAlertas").innerHTML += "<div>Email inválido!</div> "
+        document.getElementById("textAlertas").innerHTML += "<div>Email inválido!</div> ";
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('email').style.border = "solid 1px red";
     }
@@ -451,19 +451,19 @@ function validar() {
         return /^\d+$/.test(rg);
     }
     if (numeroIdentidade == "") {
-        document.getElementById("textAlertas").innerHTML += "<div>Campo Numero da Identidade está vazio!</div> "
+        document.getElementById("textAlertas").innerHTML += "<div>Campo Numero da Identidade está vazio!</div> ";
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('numeroIdentidade').style.border = "solid 1px red";
     }
     if (!isRGValido(numeroIdentidade)) {
-        document.getElementById("textAlertas").innerHTML += "<div>Identidade inválida!</div> "
+        document.getElementById("textAlertas").innerHTML += "<div>Identidade inválida!</div> ";
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('numeroIdentidade').style.border = "solid 1px red";
     }
     //numero cpf vazio e validação oficial
     var numeroCpf = document.getElementById('numeroCpf').value;
     if (numeroCpf == "") {
-        document.getElementById("textAlertas").innerHTML += "<div>Campo CPF está vazio!</div> "
+        document.getElementById("textAlertas").innerHTML += "<div>Campo CPF está vazio!</div> ";
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('numeroCpf').style.border = "solid 1px red";
     }
@@ -490,7 +490,7 @@ function validar() {
         return true;
     }
     if (!validarCPF(numeroCpf)) {
-        document.getElementById("textAlertas").innerHTML += "<div>CPF inválido!</div> "               //<<<<<<<<<<<<validar cpf<<<<<<<<<<<<<<<
+        document.getElementById("textAlertas").innerHTML += "<div>CPF inválido!</div> ";               //<<<<<<<<<<<<validar cpf<<<<<<<<<<<<<<<
         document.getElementById("alertas").style.display = "flex";
         document.getElementById('numeroCpf').style.border = "solid 1px red";
 
