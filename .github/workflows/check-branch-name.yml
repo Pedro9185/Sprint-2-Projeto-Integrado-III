@@ -12,9 +12,9 @@ jobs:
         run: |
           echo "Branch: ${{ github.head_ref }}"
           if [[ ! "${{ github.head_ref }}" =~ ^(feature|bugfix|hotfix|release)/.+$ ]]; then
-            echo "❌ Nome da branch inválido: '${{ github.head_ref }}'"
+            echo "Nome da branch inválido: '${{ github.head_ref }}'"
             echo "Use os padrões: feature/, bugfix/, hotfix/, release/"
             exit 1
           else
-            echo "✅ Nome da branch está válido."
+            echo "Nome da branch está válido."
           fi
