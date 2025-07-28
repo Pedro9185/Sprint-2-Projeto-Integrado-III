@@ -67,12 +67,137 @@ Você pode acessar o site pelo link:
 ### Página Folha de Pagamento
   - Pagina inicial mostrando os funcionarios cadastrados puxando os dados direto do local storage
   - layout responsivo para varios tamanhos mobile e desktop
+## 🔄 O que é Integração Contínua?
 
+**Integração Contínua (CI - Continuous Integration)** é uma prática do desenvolvimento de software onde o código é testado e validado automaticamente sempre que uma nova alteração é feita (como um *push* ou *pull request* no GitHub).
+
+Isso significa que, sempre que alguém faz uma mudança no projeto, o GitHub executa automaticamente uma série de testes e verificações para garantir que o código continua funcionando corretamente.
+
+### 🧠 Por que isso é importante para quem está aprendendo?
+
+- ✅ **Ajuda a detectar erros cedo:** erros de lógica, digitação ou estrutura são encontrados automaticamente.
+- ✅ **Evita quebrar o projeto sem perceber:** com testes automatizados, você sabe na hora se algo parou de funcionar.
+- ✅ **Desenvolve boas práticas desde o início:** quem aprende com CI entende a importância de código limpo e testável.
+- ✅ **Facilita o trabalho em equipe:** mesmo em grupos pequenos, a integração contínua mantém o código estável e padronizado.
+
+> Em resumo: usar CI é como ter um assistente que testa seu código toda vez que você salva no GitHub — e avisa se algo deu errado. Isso dá mais confiança para continuar aprendendo e melhorando o projeto.
+
+---
+
+## 🧪 Testes Automatizados com GitHub Actions
+
+
+
+Este projeto utiliza **GitHub Actions** para rodar automaticamente verificações e testes a cada push ou pull request. Isso garante a integridade e consistência do sistema mesmo em desenvolvimento ativo.
+
+Os testes automatizados implementados até o momento são simples e limitados, pois este projeto ainda está em desenvolvimento e foca apenas no front-end, utilizando dados simulados (mockados) via localStorage, sem conexão com banco de dados real ou backend.
+
+O objetivo principal nesta etapa é estabelecer uma base sólida de automações e boas práticas de Integração Contínua (CI), preparando o projeto para evoluções futuras com mais funcionalidades, testes completos e integração com API.
+
+Mesmo em um projeto de protótipo, essas validações já ajudam a reforçar o aprendizado de ferramentas como ESLint, HTMLHint, Playwright e GitHub Actions — e demonstram como a automação pode ser aplicada desde os primeiros passos no desenvolvimento web.
+ 
+
+### 🔍 Testes implementados:
+
+| Tipo de Teste             | Descrição                                                                                       | Justificativa                                                                 |
+|---------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| **ESLint**                | Verifica o código JavaScript quanto a boas práticas de sintaxe e estilo                       | Garante um código limpo, padronizado e livre de erros comuns                  |
+| **HTMLHint**              | Valida os arquivos HTML com base em boas práticas e regras definidas                          | Evita problemas de acessibilidade, semântica e estrutura                      |
+| **Check Branch Name**     | Verifica se os nomes das branches seguem o padrão definido (`feature/*`, `bugfix/*`, etc.)    | Mantém organização e previsibilidade no controle de versões                   |
+| **Playwright - Login**    | Testa diferentes cenários de login: sucesso, senha incorreta, e-mail inexistente, campos vazios| Simula a experiência real de usuário e garante o comportamento correto        |
+| **Playwright - Cadastro** | Testa o cadastro de usuários: sucesso e tentativa com e-mail já cadastrado                    | Garante que as regras de validação estão funcionando corretamente             |
+
+---
+
+## 🧪 Rodando os testes localmente
+
+Para desenvolvedores que desejam executar os testes manualmente antes de subir alterações, siga os passos abaixo.
+
+### ✅ Pré-requisitos
+
+Você precisa ter o [Node.js (versão LTS)](https://nodejs.org/) instalado localmente.  
+O Node traz junto o `npm`, que será usado para instalar as ferramentas.
+
+---
+### Clone o repositório:
+
+```bash
+git clone https://github.com/pedro9185/Sprint-2-Projeto-Integrado-III.git
+cd Sprint-2-Projeto-Integrado-III
+```
+
+### 🔧 Instalação das dependências
+
+No terminal, dentro da raiz do projeto:
+
+```bash
+npm install
+```
+
+Isso instalará as dependências do projeto, incluindo:
+- `eslint`
+- `htmlhint`
+- `playwright`
+
+---
+
+### 📘 Executando os testes Playwright
+
+Para rodar **todos os testes E2E** do Playwright:
+
+```bash
+npx playwright test
+```
+
+Para visualizar o teste rodando no navegador:
+
+```bash
+npx playwright test --headed
+```
+
+Você pode rodar testes específicos, por exemplo:
+
+```bash
+npx playwright test tests/login.spec.js
+```
+
+---
+
+### 📗 Verificando erros com ESLint
+
+Para verificar todos os arquivos `.js`:
+
+```bash
+npx eslint "**/*.js"
+```
+
+Esse comando analisa seu código JavaScript conforme as regras definidas no projeto.
+
+---
+
+### 📙 Verificando problemas com HTMLHint
+
+Para validar todos os arquivos `.html`:
+
+```bash
+npx htmlhint "**/*.html"
+```
+
+Isso verifica semântica, acessibilidade e estrutura do HTML com base nas regras do arquivo `htmlhint.yml`.
+
+---
+
+### ✅ Dica final
+
+Você não precisa instalar ESLint, Playwright ou HTMLHint globalmente — o `npx` executa usando as dependências locais listadas no `package.json`.
 
 ## Desenvolvedores
 [Lucas Araujo](https://github.com/lal28)<br>
 [Pedro Henrique](https://github.com/Pedro9185)<br>
 [Maria Mikaelle Andrade](https://github.com/Mikaelle27)<br>
+[Jaine Bento](https://github.com/jaibento)<br>
+
+
 
 ## Projeto
 **Ferramentas Utilizadas:**
