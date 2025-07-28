@@ -68,8 +68,8 @@ Você pode acessar o site pelo link:
   - Pagina inicial mostrando os funcionarios cadastrados puxando os dados direto do local storage
   - layout responsivo para varios tamanhos mobile e desktop
 
-    
-# 🔄 O que é Integração Contínua?
+# Integração Contínua    
+### 🔄 O que é?
 
 **Integração Contínua (CI - Continuous Integration)** é uma prática do desenvolvimento de software onde o código é testado e validado automaticamente sempre que uma nova alteração é feita (como um *push* ou *pull request* no GitHub).
 
